@@ -5,16 +5,17 @@
   
   
 body
-  font-family: 'AvantGardeCTT'
-  margin: 0
+	font-family: 'AvantGardeCTT'
+	margin: 0
 .app
 	display: grid
-	grid-template-areas: "header header header header header header header" "aside selection selection . . . . " "aside selection selection . . . . "                                                                                                                                                                                                                                                                                                                                                                                                                               
-// ///////////////////////////////////////////////////////////
+	grid-template-columns: 150px 1fr 2fr
+	// ///////////////////////////////////////////////////////////
 ////////////////////////////ШАПКА/////////////////////////////
 //////////////////////////////////////////////////////////////
 header
-	box-shadow: 0px 0 70px #dbdadb
+	box-shadow: 0px 0 70px #dbdadb	
+	grid-column: 1/-1
 .header
 	padding: 10px 10px
 	display: grid
@@ -83,9 +84,13 @@ header
 			top: 20px
 			right: 5%
 		&-box
+			position: absolute
+			width: 100%
+			background-color: #fff
 			border-top: 2px solid #CECECA
 			border-image: linear-gradient(90deg, #fff, #CECECA , #fff)
 			border-image-slice: 1
+			border-radius: 0px 0px 10px 10px
 			&-button
 				border-bottom-right-radius: 5px
 				border-top-right-radius: 5px
@@ -115,7 +120,7 @@ header
 ////////////////////////////САЙДБАР///////////////////////////////
 //////////////////////////////////////////////////////////////////
 aside 
-	height: calc(100vh - 116px)
+	height: 100vh
 	box-shadow: 0 0 70px #dbdadb
 	width: auto
 	z-index: 6
@@ -207,7 +212,7 @@ aside
 		padding: 15px 30px
 		text-decoration: none
 		color: #B7B5B4
-		font-size: 10px
+		font-size: 12px
 		font-weight: 900
 		border-bottom: 2px solid #CECECA
 		border-image: linear-gradient(90deg, #fff, #CECECA , #fff)
@@ -228,8 +233,57 @@ aside
 		border-image: linear-gradient(90deg, #fff, #CECECA , #fff)
 		border-image-slice: 1 
 section
+	border-right: 2px solid #CECECA
+	border-image: linear-gradient(0deg, #fff, #CECECA , #fff)
+	border-image-slice: 1
+	padding: 20px
 .headline
-	
+	color: #9b2e5a
+	text-align: start
+.logo
+	text-align: center
+.button
+	width: 100%
+	display: grid
+	grid-template-columns: auto auto
+	grid-gap: 10px
+	&-action
+		border: 0.12em solid #B7B5B4
+		color: #7a7774
+		background-color: #fff
+		border-radius: 13px
+		font-size: 12px
+		font-weight: 500
+		padding: 8px
+		outline: none
+		&:hover
+			border: 0.12em solid #9b2e5a
+			background-color: #9b2e5a
+			color: #fff
+			transition: .4s
+		&:active
+			border: 0.12em solid #9b2e5a
+			background-color: #9b2e5a
+			color: #fff
+
+.list
+	width: 100%
+	&-details
+		border-bottom: 2px dotted #bababa
+		width: 100%
+		&-box
+			font-weight: 600
+			bottom: -3px
+			position: relative
+			display: flex
+			&-value
+				align-self: start
+				background-color: #fff
+			&-number
+				align-self: end
+				background-color: #fff
+
+
 
 
 
