@@ -1,0 +1,236 @@
+@font-face
+  font-family: 'AvantGardeCTT'
+  font-style: normal
+  src: local('AvantGardeCTT'), local('AvantGardeCTT-Regular'), url(https://allfont.ru/cache/fonts/avantgardectt_caeaf746fc19648d748ca8d04dc796eb.woff) format('woff'), url(https://allfont.ru/cache/fonts/avantgardectt_caeaf746fc19648d748ca8d04dc796eb.ttf) format('truetype')
+  
+  
+body
+  font-family: 'AvantGardeCTT'
+  margin: 0
+.app
+	display: grid
+	grid-template-areas: "header header header header header header header" "aside selection selection . . . . " "aside selection selection . . . . "                                                                                                                                                                                                                                                                                                                                                                                                                               
+// ///////////////////////////////////////////////////////////
+////////////////////////////ШАПКА/////////////////////////////
+//////////////////////////////////////////////////////////////
+header
+	box-shadow: 0px 0 70px #dbdadb
+.header
+	padding: 10px 10px
+	display: grid
+	grid-template-columns: 1fr auto auto 300px
+	&-images
+		align-self: center
+		justify-self: start
+		&-logo
+			width: auto
+			height: 40px
+		&-beta
+			vertical-align: 14px
+	&-notifications
+		margin: 15px
+		color: #7E2E53
+		justify-self: center
+		align-self: center
+		position: relative
+		&-icon
+			font-size: 22px
+		&-number
+			color: #fff
+			font-size: 7px
+			top: -4px
+			left: 1.5em
+			position: absolute
+			padding: 1px 4px
+			border: 0.25em solid #fff
+			border-radius: 12px
+			background-color: #E14F59
+			text-align: center
+	&-balance
+		margin: 15px
+		font-weight: 600
+		border: 0.15em solid #EAEAEA
+		display: flex
+		flex-direction: row
+		overflow: hidden
+		justify-self: center
+		align-self: center
+		color: #7F2E53
+		text-decoration: none
+		border-radius: 13px
+		padding: 0.5em 0.8em
+		&-icon
+			font-size: 21px
+		&-text
+			padding-left: 2%
+	&-card
+		border-radius: 10px
+		margin-left: 10px
+		color: #7F2E53
+		box-shadow: 0px 0 70px #D5D5D1
+		position: relative
+		font-weight: 600
+		&-client 
+			padding: 3%
+			&-line
+				display: grid
+				grid-template-columns: 0.5fr 2fr
+				&-role
+					color: #989593
+		&-arrow
+			color: #989593
+			position: absolute
+			top: 20px
+			right: 5%
+		&-box
+			border-top: 2px solid #CECECA
+			border-image: linear-gradient(90deg, #fff, #CECECA , #fff)
+			border-image-slice: 1
+			&-button
+				border-bottom-right-radius: 5px
+				border-top-right-radius: 5px
+				border-bottom-left-radius: 10px
+				border-top-left-radius: 10px
+				border-radius: 10px
+				display: flex
+				flex-direction: row
+				padding: 3%
+				background-color: #fff
+				color: #989593
+				border: none
+				justify-self: start
+				align-self: end
+				cursor: pointer
+				outline: none
+				&:active
+					color: #7F2E53
+				&:hover
+					color: #7F2E53
+					transition: .4s
+				&-icon
+					padding-right: 2px
+						
+
+//////////////////////////////////////////////////////////////
+////////////////////////////САЙДБАР///////////////////////////////
+//////////////////////////////////////////////////////////////////
+aside 
+	height: calc(100vh - 116px)
+	box-shadow: 0 0 70px #dbdadb
+	width: auto
+	z-index: 6
+	background-color: #fff
+.box
+	padding: 20px
+	&-menu
+		display: block
+		width: 100px
+		height: 100px 
+		overflow: hidden
+		border-radius: 50%
+		position: relative
+		&-circle
+			background: #EDECEC
+			width: 100%
+			height: 100%
+			border-radius: 50%
+			left: 20px
+			&-icon
+				position: absolute
+				font-size: 14px
+				top: 2px
+				color: #B7B5B4
+				width: 15px
+				text-align: center
+				height: calc(49% - 2px)
+				left: calc(50% - 7px)
+				transform-origin: 50% 100%
+				transition: .3s
+				cursor: pointer
+				&>i
+					position: relative
+				&:before
+					color: #9B305C 
+					content: ""
+					display: block
+					position: absolute
+					top: -9px
+					left: -20px
+					transition: .3s
+					border-top: 0px solid
+					width: 0
+					border-left: 16px solid transparent
+					border-right: 16px solid transparent
+				&:hover
+					color: #fff
+					&:before
+						width: 22px
+						border-top: 35px solid
+				&:nth-child(2)
+					transform: rotate(45deg)
+					&>i
+						transform: rotate(-45deg)
+				&:nth-child(3)
+					transform: rotate(90deg)
+					&>i
+						transform: rotate(-90deg)
+				&:nth-child(4)
+					transform: rotate(135deg)
+					&>i
+						transform: rotate(-135deg)
+				&:nth-child(5)
+					transform: rotate(180deg)
+		&-center 
+			background: #fff
+			width: 55%
+			height: 55%
+			position: absolute
+			top: 22.5%
+			left: 22.5%
+			border-radius: 50%
+			&-icon
+				color: #B7B5B4
+				position: absolute
+				top: calc(50% - 13px)
+				left: calc(50% - 13px)
+				border-radius: 50%
+				border: 4px solid
+				padding: 1px 2px
+// //////////////////////////////////////////////////////////////
+/////////////////////////СПИСОК////////////////////////////////
+////////////////////////////////////////////////////////////////
+.items
+	display: flex
+	flex-direction: column
+	margin-bottom: 10px
+	&-item
+		padding: 15px 30px
+		text-decoration: none
+		color: #B7B5B4
+		font-size: 10px
+		font-weight: 900
+		border-bottom: 2px solid #CECECA
+		border-image: linear-gradient(90deg, #fff, #CECECA , #fff)
+		border-image-slice: 1 
+		&-icon
+			font-size: 18px
+			padding-right: 8px
+			vertical-align: middle
+		.clipboard
+			font-size: 20px
+			&:active
+				color: #AF3060
+			&:hover
+				color: #AF3060
+				transition: .4s
+	.top
+		border-top: 2px solid #CECECA
+		border-image: linear-gradient(90deg, #fff, #CECECA , #fff)
+		border-image-slice: 1 
+section
+.headline
+	
+
+
+
+
