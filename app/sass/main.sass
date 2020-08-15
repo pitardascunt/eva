@@ -19,7 +19,7 @@ header
 .header
 	padding: 10px 10px
 	display: grid
-	grid-template-columns: 1fr auto auto 300px
+	grid-template-columns: 1fr auto auto auto
 	&-images
 		align-self: center
 		justify-self: start
@@ -72,17 +72,24 @@ header
 		position: relative
 		font-weight: 600
 		&-client 
-			padding: 3%
+			padding: 5px
 			&-line
-				display: grid
-				grid-template-columns: 0.5fr 2fr
+				display: flex
+				flex-direction: row
+				&-img
+					height: 45px
+					padding: 5px
+
+				&-name
+					padding: 5px 25px 5px 5px
 				&-role
 					color: #989593
+					padding: 0px 25px 5px 5px
 		&-arrow
 			color: #989593
 			position: absolute
 			top: 20px
-			right: 5%
+			right: 13px
 		&-box
 			position: absolute
 			width: 100%
@@ -240,6 +247,8 @@ section
 .headline
 	color: #9b2e5a
 	text-align: start
+	font-weight: 900
+
 .logo
 	text-align: center
 .button
@@ -267,7 +276,7 @@ section
 			color: #fff
 
 .list
-	width: 100%
+	padding: 15px 15px 0px 15px
 	&-details
 		border-bottom: 2px dotted #bababa
 		width: 100%
@@ -276,14 +285,25 @@ section
 			bottom: -3px
 			position: relative
 			display: flex
+			justify-content: space-between
+
 			&-value
 				align-self: start
 				background-color: #fff
+				color: #a9a9a9
 			&-number
+				color: #9b2e5a
 				align-self: end
 				background-color: #fff
-
-
+.text
+	width: 100%
+	color: #7a7774
+	font-size: 14px
+.box	
+	line-height: 100%
+.task
+	&-items
+		color: #b03564
 
 
 
