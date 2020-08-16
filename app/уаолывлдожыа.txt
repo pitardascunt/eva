@@ -1,0 +1,4 @@
+git commit -m 'Название комита'		--Точка сохранения
+git push origin master 			--Отправить на сервер
+
+git pull 				--Скачать 
