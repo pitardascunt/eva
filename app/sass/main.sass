@@ -9,7 +9,7 @@ body
 	margin: 0
 .app
 	display: grid
-	grid-template-columns: 150px 1fr
+	grid-template-columns: 170px 1fr
 	
 	// ///////////////////////////////////////////////////////////
 ////////////////////////////ШАПКА/////////////////////////////
@@ -69,7 +69,7 @@ header
 		border-radius: 10px
 		margin-left: 10px
 		color: #7F2E53
-		box-shadow: 0px 0 70px #D5D5D1
+		box-shadow: 0px 0 70px #CACACA
 		position: relative
 		font-weight: 600
 		&-client 
@@ -129,12 +129,14 @@ header
 //////////////////////////////////////////////////////////////////
 aside 
 	height: 100vh
-	box-shadow: 0 0 70px #dbdadb
+	box-shadow: 0 0 70px #A9A9A9 
 	width: auto
 	z-index: 6
 	background-color: #fff
 .box
 	padding: 20px
+	display: flex
+	justify-content: center
 	&-menu
 		display: block
 		width: 100px
@@ -217,7 +219,7 @@ aside
 	flex-direction: column
 	margin-bottom: 10px
 	&-item
-		padding: 15px 30px
+		padding: 30px 30px
 		text-decoration: none
 		color: #B7B5B4
 		font-size: 12px
@@ -226,27 +228,38 @@ aside
 		border-image: linear-gradient(90deg, #fff, #CECECA , #fff)
 		border-image-slice: 1 
 		&-icon
-			font-size: 18px
+			font-size: 22px
 			padding-right: 8px
-			vertical-align: middle
+			vertical-align: -2px
 		.clipboard
-			font-size: 20px
-			&:active
-				color: #AF3060
-			&:hover
-				color: #AF3060
-				transition: .4s
+			font-size: 26px
+		&:active
+			color: #AF3060
+		&:hover
+			color: #AF3060
+			transition: .4s
 	.top
 		border-top: 2px solid #CECECA
 		border-image: linear-gradient(90deg, #fff, #CECECA , #fff)
 		border-image-slice: 1 
-section
+
+
+
+
+.project
+	display: grid
+	grid-template-columns: 1fr 3fr
+	
+//////////////////////////////////////////////////////////////////////////
+/////////////////////////////ХРОНОЛИГИЯ/////////////////////////////////
+/////////////////////////////////////////////////////////////////////////	// 
+.chronology
 	border-right: 2px solid #CECECA
 	border-image: linear-gradient(0deg, #fff, #CECECA , #fff)
 	border-image-slice: 1
-	padding: 20px
+	padding: 60px 7%
 .headline
-	color: #9b2e5a
+	color: #9B2E5A
 	text-align: start
 	font-weight: 900
 
@@ -258,26 +271,27 @@ section
 	grid-template-columns: auto auto
 	grid-gap: 10px
 	&-action
-		border: 0.12em solid #B7B5B4
-		color: #7a7774
+		border: 0.15em solid #DBDADA
+		color: #7D7977
 		background-color: #fff
 		border-radius: 13px
 		font-size: 12px
-		font-weight: 500
+		font-weight: 600
 		padding: 8px
+		font-family: 'AvantGardeCTT'
 		outline: none
 		&:hover
-			border: 0.12em solid #9b2e5a
+			border: 0.15em solid #9b2e5a
 			background-color: #9b2e5a
 			color: #fff
 			transition: .4s
 		&:active
-			border: 0.12em solid #9b2e5a
+			border: 0.15em solid #9b2e5a
 			background-color: #9b2e5a
 			color: #fff
 
 .list
-	padding: 15px 15px 0px 15px
+	// padding: 15px 15px 0px 15px
 	&-details
 		border-bottom: 2px dotted #bababa
 		width: 100%
@@ -291,20 +305,118 @@ section
 			&-value
 				align-self: start
 				background-color: #fff
-				color: #a9a9a9
+				color: #ACACAC
 			&-number
-				color: #9b2e5a
+				color: #B43E6C
 				align-self: end
 				background-color: #fff
 .text
 	width: 100%
 	color: #7a7774
 	font-size: 14px
-.box	
+.container	
 	line-height: 100%
 .task
+	padding-left: 20px
 	&-items
 		color: #b03564
+
+// /////////////////////////////////////////////////////////////
+/////////////////////////ПРИМЕРЫ////////////////////////////////
+////////////////////////////////////////////////////////////////
+.example
+	border: 0.08em solid #B8B6B5 
+	border-radius: 10px
+	padding: 10px 0px
+	color: #94908C
+	margin: 10px 0px
+	&-subtitle
+		text-align: center
+		font-size: 13px
+		font-weight: 600
+	&-content
+		padding: 20px 30px
+		display: grid
+		grid-template-columns: 1fr 2fr
+		grid-template-rows: auto auto
+		&-picture
+			&-pic
+				height: auto
+				max-width: 60px
+		&-loading
+			&-text
+				font-size: 11px
+				font-weight: 600
+			&-button
+				text-decoration: underline #C17D98
+				border: none
+				background: #fff
+				color: #C17D98
+				font-size: 11px
+				font-weight: 700
+				padding: 0px
+				cursor: pointer
+// //////////////////////////////////////////////////////////////
+/////////////////////////СООБЩЕНИЯ////////////////////////////////
+//////////////////////////////////////////////////////////////////
+
+.correspondence
+	padding: 60px 100px 60px 60px
+.message
+	margin: 10px
+	position: relative
+	padding: 15px 50px 15px 30px
+	border: 2px solid #BA3165
+	border-radius: 20px 20px 5px 20px
+	&-box
+		display: grid
+		grid-template-columns: 1fr 3fr
+		grid-gap: 10px
+		&-text
+			color: #BD577E
+			font-weight: 500
+		.withoutpic
+			grid-column: 1/3
+		&-photo
+			grid-row: 1/3
+			&-pic
+				max-width: 90px
+				height: auto
+				padding: 5px
+				vertical-align: middle
+		&-butons
+			color: #B03564
+			font-weight: 600
+			font-size: 16px
+			&-container
+				display: grid
+				grid-template-columns: 1fr 1fr 3fr
+				grid-gap: 7px
+				margin: 10px 0px
+				&-button
+					min-width: 60px
+					padding: 2px
+					border: 0.07em solid #B03564	
+					border-radius: 7px
+					background: #fff
+					color: #B03564	
+					font-family: 'AvantGardeCTT'
+					outline: none
+					font-weight: 600
+					cursor: pointer
+					&:hover
+						background: #B03564
+						color: #fff
+
+	&-time
+		position: absolute
+		bottom: 10px
+		right: 15px
+		font-size: 12px
+		color: #B6B6B6
+
+		
+
 
 
 
