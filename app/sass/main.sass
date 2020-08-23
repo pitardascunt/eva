@@ -18,7 +18,7 @@ body
 //////////////////////////////////////////////////////////////
 .header
 	//*у 0 не обязательно пиксели прописывать
-	box-shadow: 0px 0 70px #dbdadb	
+	box-shadow: 0px 0 70px #dbdadb	      
 	z-index: 10
 	background: #fff
 	grid-column: 1/-1
@@ -108,11 +108,7 @@ body
 
 			&-button
 				//*Повторяются
-				border-bottom-right-radius: 5px
-				border-top-right-radius: 5px
-				border-bottom-left-radius: 10px
-				border-top-left-radius: 10px
-				border-radius: 10px
+				border-radius: 5px 10px
 				display: flex
 				flex-direction: row
 				padding: 3% //* в px
@@ -124,8 +120,6 @@ body
 				cursor: pointer
 				outline: none
 				//*из-за работы скрипта не будет даже мгновения при котором этот псевдокласс отработает
-				&:active
-					color: #7F2E53
 				&:hover
 					color: #7F2E53
 					transition: .4s
@@ -287,9 +281,7 @@ aside
 	color: #9B2E5A
 	text-align: start
 	font-weight: 900
-//* ээм, а ты на приколе, прописываешь text-align: start в одном классе, а потом применяешь новый класс где перебиваешь
-//* это свойство, и вообще зачем этот класс нужен?
-.logo
+.text-center
 	text-align: center
 .button
 	width: 100%
@@ -321,8 +313,7 @@ aside
 //* пиши сразу .list-details
 .list
 	&-details
-		border-bottom: 2px dotted #bababa
-		width: 100% //* они и так во всю ширину потому что боксовый
+		border-bottom: 2px dotted #bababa//* они и так во всю ширину потому что боксовый
 		&-box
 			font-weight: 600
 			bottom: -3px
@@ -331,12 +322,12 @@ aside
 			justify-content: space-between
 
 			&-value
-				align-self: start //*и так прописан space-between
+				
 				background-color: #fff
 				color: #ACACAC
 			&-number
 				color: #B43E6C
-				align-self: end //*и так прописан space-between
+				
 				background-color: #fff
 .text
 	width: 100%
@@ -369,7 +360,6 @@ aside
 		grid-template-rows: auto auto
 		&-picture
 			&-pic
-				height: auto //* они по умолчанию авто, не нужно лишний раз прописывать
 				max-width: 60px
 		&-loading
 			&-text
@@ -389,6 +379,7 @@ aside
 //////////////////////////////////////////////////////////////////
 
 .correspondence
+	overflow-y: auto
 	padding: 60px 100px 60px 20px
 .message
 	margin: 20px 10px
