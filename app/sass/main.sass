@@ -7,25 +7,23 @@
 body
 	font-family: 'AvantGardeCTT'
 	margin: 0
-	height: 100vh
-	overflow-y: none
 .app
 	display: grid
+	height: 100vh
+	grid-template: auto minmax(100px, 1fr) / 170px 1fr
 	
-	grid-template: auto 1fr / 170px 1fr
 	
-	
-	// ///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////
 ////////////////////////////ШАПКА/////////////////////////////
 //////////////////////////////////////////////////////////////
-header
 .header
-	box-shadow: 0px 0 70px #dbdadb	
+	//*у 0 не обязательно пиксели прописывать
+	box-shadow: 0px 0 70px #dbdadb	      
 	z-index: 10
 	background: #fff
 	grid-column: 1/-1
 	padding: 10px 50px
-	display: grid
+	display: grid              //*repeat(3, auto)
 	grid-template-columns: 1fr auto auto auto
 	&-images
 		align-self: center
@@ -70,12 +68,12 @@ header
 		&-icon
 			font-size: 21px
 		&-text
-			padding-left: 2%
+			padding-left: 2% //* в px
 	&-card
 		border-radius: 10px
 		margin-left: 10px
 		color: #7F2E53
-		box-shadow: 0px 0 70px #CACACA
+		box-shadow: 0px 0 70px #CACACA  //* нее, тебе болье пододет цвет #bebebe с #bababa
 		position: relative
 		font-weight: 600
 		&-client 
@@ -97,6 +95,7 @@ header
 			position: absolute
 			top: 20px
 			right: 13px
+		//* нет теней
 		&-box
 			position: absolute
 			width: 100%
@@ -108,14 +107,11 @@ header
 			display: none
 
 			&-button
-				border-bottom-right-radius: 5px
-				border-top-right-radius: 5px
-				border-bottom-left-radius: 10px
-				border-top-left-radius: 10px
-				border-radius: 10px
+				//*Повторяются
+				border-radius: 5px 10px
 				display: flex
 				flex-direction: row
-				padding: 3%
+				padding: 3% //* в px
 				background-color: #fff
 				color: #989593
 				border: none
@@ -123,21 +119,27 @@ header
 				align-self: end
 				cursor: pointer
 				outline: none
-				&:active
-					color: #7F2E53
+				//*из-за работы скрипта не будет даже мгновения при котором этот псевдокласс отработает
 				&:hover
 					color: #7F2E53
 					transition: .4s
 				&-icon
 					padding-right: 2px
+		//*не правильно прописан, должен быть &.active из-за чего еще и не правильная вложенность
+		//*пропиши аниимацию при появлении
+		//* P.S. transform тебе в помощь. У меня мысля сделать появление за счет изменения высоты                                                                                                                                                                P.P.S. вот кусок кода )) transform: scaleX(0) transform-origin: top
 		.active
 			display: block			
 
 //////////////////////////////////////////////////////////////
 ////////////////////////////САЙДБАР///////////////////////////////
 //////////////////////////////////////////////////////////////////
+<<<<<<< HEAD
 aside 
 	height: 100%
+=======
+aside
+>>>>>>> origin/master
 	box-shadow: 0 0 70px #A9A9A9 
 	width: auto
 	z-index: 6
@@ -166,7 +168,7 @@ aside
 				color: #B7B5B4
 				width: 15px
 				text-align: center
-				height: calc(49% - 2px)
+				height: calc(49% - 2px) //* хрень, здесь не может быть 49%, только 50, видимо ты не понимаешь зачем здесь проценты
 				left: calc(50% - 7px)
 				transform-origin: 50% 100%
 				transition: .3s
@@ -204,6 +206,18 @@ aside
 						transform: rotate(-135deg)
 				&:nth-child(5)
 					transform: rotate(180deg)
+				&:nth-child(6)
+					transform: rotate(225deg)
+					&>i
+						transform: rotate(-225deg)
+				&:nth-child(7)
+					transform: rotate(270deg)
+					&>i
+						transform: rotate(-270deg)
+				&:nth-child(8)
+					transform: rotate(315deg)
+					&>i
+						transform: rotate(-315deg)
 		&-center 
 			background: #fff
 			width: 55%
@@ -220,8 +234,8 @@ aside
 				border-radius: 50%
 				border: 4px solid
 				padding: 1px 2px
-// //////////////////////////////////////////////////////////////
-/////////////////////////СПИСОК////////////////////////////////
+/////////////////////////////////////////////////////////////////
+/////////////////////////СПИСОК/////////////////////////////////
 ////////////////////////////////////////////////////////////////
 .items
 	display: flex
@@ -260,20 +274,19 @@ aside
 	grid-template-columns: 1fr 3fr
 	
 //////////////////////////////////////////////////////////////////////////
-/////////////////////////////ХРОНОЛИГИЯ/////////////////////////////////
-/////////////////////////////////////////////////////////////////////////	// 
+/////////////////////////////ХРОНОЛИГИЯ//////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
 .chronology
 	overflow-y: auto
 	border-right: 2px solid #CECECA
 	border-image: linear-gradient(0deg, #fff, #CECECA , #fff)
 	border-image-slice: 1
-	padding: 60px 7% 20px 7%
+	padding: 60px 7% 20px 7% //*спорное использование процентов, нооо пусть будет, докалупаться то надо))
 .headline
 	color: #9B2E5A
 	text-align: start
 	font-weight: 900
-
-.logo
+.text-center
 	text-align: center
 .button
 	width: 100%
@@ -295,15 +308,17 @@ aside
 			background-color: #9b2e5a
 			color: #fff
 			transition: .4s
+		//* все тот же прикол с бессмысленностю прописывать
 		&:active
 			border: 0.15em solid #9b2e5a
 			background-color: #9b2e5a
 			color: #fff
 
+//* у .list свойств нет, а он стоит в отдельной строчке и после компиляции будет отдельно прописан
+//* пиши сразу .list-details
 .list
 	&-details
-		border-bottom: 2px dotted #bababa
-		width: 100%
+		border-bottom: 2px dotted #bababa//* они и так во всю ширину потому что боксовый
 		&-box
 			font-weight: 600
 			bottom: -3px
@@ -312,12 +327,12 @@ aside
 			justify-content: space-between
 
 			&-value
-				align-self: start
+				
 				background-color: #fff
 				color: #ACACAC
 			&-number
 				color: #B43E6C
-				align-self: end
+				
 				background-color: #fff
 .text
 	width: 100%
@@ -350,7 +365,6 @@ aside
 		grid-template-rows: auto auto
 		&-picture
 			&-pic
-				height: auto
 				max-width: 60px
 		&-loading
 			&-text
@@ -393,13 +407,18 @@ aside
 		&-photos
 			grid-row: 1/3
 			display: grid
-			grid-template-rows: 2fr 1fr
-			grid-template-columns: 3fr 1fr 1fr 1fr
+			grid-template-rows: 150px
+			grid-auto-rows: 70px
+			grid-gap: 8px
+			grid-template-columns: repeat(3, 1fr)
 			&-pic
-				background: url("") no-repeat
+				background: center #ddd url("https://queimados.rj.gov.br/images/portal/file.png") no-repeat
 				background-size: cover
-				background-position: center
 				padding: 5px
+				border-radius: 10px
+				&:first-child
+					grid-column: 1/-1  
+
 		&-butons
 			color: #B03564
 			font-weight: 600
@@ -407,6 +426,7 @@ aside
 			&-text
 			.bottom	
 				font-weight: 500
+			// g пропущенна
 			.weidth
 				font-weight: 600
 			&-container
