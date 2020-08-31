@@ -70,6 +70,8 @@ body
 		&-text
 			padding-left: 2% //* в px
 	&-card
+		z-index: 20
+		position: relative
 		border-radius: 10px
 		margin-left: 10px
 		color: #7F2E53
@@ -97,6 +99,8 @@ body
 			right: 13px
 		//* нет теней
 		&-box
+			z-index: 19
+			box-shadow: 0px 0 70px #CACACA
 			position: absolute
 			width: 100%
 			background-color: #fff
@@ -104,14 +108,15 @@ body
 			border-image: linear-gradient(90deg, #fff, #CECECA , #fff)
 			border-image-slice: 1
 			border-radius: 0px 0px 10px 10px
-			display: none
-
+			transform: scaleY(0)
+			transform-origin: top
+			transition: .4s
+			opacity: 0
 			&-button
-				//*Повторяются
 				border-radius: 5px 10px
 				display: flex
 				flex-direction: row
-				padding: 3% //* в px
+				padding: 3% //* в px	
 				background-color: #fff
 				color: #989593
 				border: none
@@ -119,125 +124,29 @@ body
 				align-self: end
 				cursor: pointer
 				outline: none
-				//*из-за работы скрипта не будет даже мгновения при котором этот псевдокласс отработает
 				&:hover
 					color: #7F2E53
 					transition: .4s
 				&-icon
 					padding-right: 2px
-		//*не правильно прописан, должен быть &.active из-за чего еще и не правильная вложенность
-		//*пропиши аниимацию при появлении
-		//* P.S. transform тебе в помощь. У меня мысля сделать появление за счет изменения высоты                                                                                                                                                                P.P.S. вот кусок кода )) transform: scaleX(0) transform-origin: top
-		.active
-			display: block			
+			//*не правильно прописан, должен быть &.active из-за чего еще и не правильная вложенность
+			//*пропиши аниимацию при появлении
+			//* P.S. transform тебе в помощь. У меня мысля сделать появление за счет изменения высоты                                                                                                                                                                P.P.S. вот кусок кода )) transform: scaleX(0) transform-origin: top
+			&.active
+				display: block	
+				transform: scaleY(1)
+				opacity: 1	
+
 
 //////////////////////////////////////////////////////////////
 ////////////////////////////САЙДБАР///////////////////////////////
 //////////////////////////////////////////////////////////////////
-<<<<<<< HEAD
-<<<<<<< HEAD
 aside 
-	height: 100%
-=======
-aside
->>>>>>> origin/master
-=======
-aside
->>>>>>> 7aa22f920d557e58fef0920692f9bbecc9546b39
 	box-shadow: 0 0 70px #A9A9A9 
 	width: auto
 	z-index: 6
 	background-color: #fff
-.box
-	padding: 20px
-	display: flex
-	justify-content: center
-	&-menu
-		display: block
-		width: 100px
-		height: 100px 
-		overflow: hidden
-		border-radius: 50%
-		position: relative
-		&-circle
-			background: #EDECEC
-			width: 100%
-			height: 100%
-			border-radius: 50%
-			left: 20px
-			&-icon
-				position: absolute
-				font-size: 14px
-				top: 2px
-				color: #B7B5B4
-				width: 15px
-				text-align: center
-				height: calc(49% - 2px) //* хрень, здесь не может быть 49%, только 50, видимо ты не понимаешь зачем здесь проценты
-				left: calc(50% - 7px)
-				transform-origin: 50% 100%
-				transition: .3s
-				cursor: pointer
-				&>i
-					position: relative
-				&:before
-					color: #9B305C 
-					content: ""
-					display: block
-					position: absolute
-					top: -9px
-					left: -20px
-					transition: .3s
-					border-top: 0px solid
-					width: 0
-					border-left: 16px solid transparent
-					border-right: 16px solid transparent
-				&:hover
-					color: #fff
-					&:before
-						width: 22px
-						border-top: 35px solid
-				&:nth-child(2)
-					transform: rotate(45deg)
-					&>i
-						transform: rotate(-45deg)
-				&:nth-child(3)
-					transform: rotate(90deg)
-					&>i
-						transform: rotate(-90deg)
-				&:nth-child(4)
-					transform: rotate(135deg)
-					&>i
-						transform: rotate(-135deg)
-				&:nth-child(5)
-					transform: rotate(180deg)
-				&:nth-child(6)
-					transform: rotate(225deg)
-					&>i
-						transform: rotate(-225deg)
-				&:nth-child(7)
-					transform: rotate(270deg)
-					&>i
-						transform: rotate(-270deg)
-				&:nth-child(8)
-					transform: rotate(315deg)
-					&>i
-						transform: rotate(-315deg)
-		&-center 
-			background: #fff
-			width: 55%
-			height: 55%
-			position: absolute
-			top: 22.5%
-			left: 22.5%
-			border-radius: 50%
-			&-icon
-				color: #B7B5B4
-				position: absolute
-				top: calc(50% - 13px)
-				left: calc(50% - 13px)
-				border-radius: 50%
-				border: 4px solid
-				padding: 1px 2px
+
 /////////////////////////////////////////////////////////////////
 /////////////////////////СПИСОК/////////////////////////////////
 ////////////////////////////////////////////////////////////////
@@ -246,14 +155,14 @@ aside
 	flex-direction: column
 	margin-bottom: 10px
 	&-item
-		padding: 30px 30px
+		padding: 10px 30px
 		text-decoration: none
-		color: #B7B5B4
+		color: #747D8C
 		font-size: 12px
 		font-weight: 900
 		border-bottom: 2px solid #CECECA
 		border-image: linear-gradient(90deg, #fff, #CECECA , #fff)
-		border-image-slice: 1 
+		border-image-slice: 1 	
 		&-icon
 			font-size: 22px
 			padding-right: 8px
@@ -261,9 +170,9 @@ aside
 		.clipboard
 			font-size: 26px
 		&:active
-			color: #AF3060
+			color:#9B305C
 		&:hover
-			color: #AF3060
+			color: #9B305C
 			transition: .4s
 	.top
 		border-top: 2px solid #CECECA
@@ -292,51 +201,56 @@ aside
 	font-weight: 900
 .text-center
 	text-align: center
-.button
-	width: 100%
+.buttons
 	display: grid
 	grid-template-columns: auto auto
-	grid-gap: 10px
+	grid-column-gap: 15px
+	grid-row-gap: 10px
 	&-action
-		border: 0.15em solid #DBDADA
-		color: #7D7977
-		background-color: #fff
-		border-radius: 13px
+		border: none
+		color: #767F8E
+		background-color: #EEF1F4
+		border-radius: 10px
 		font-size: 12px
 		font-weight: 600
-		padding: 8px
+		padding: 12px
 		font-family: 'AvantGardeCTT'
 		outline: none
+		display: grid
+		grid-template-columns: auto auto
+		&-icon
+			align-self: center
+			font-size: 20px
+			padding-right: 4px
+		&-text
+			justify-self: start
 		&:hover
-			border: 0.15em solid #9b2e5a
-			background-color: #9b2e5a
-			color: #fff
 			transition: .4s
-		//* все тот же прикол с бессмысленностю прописывать
-		&:active
-			border: 0.15em solid #9b2e5a
-			background-color: #9b2e5a
-			color: #fff
-
+			background-color: #FFECF3
+			color: #A03A63
+		&-active
+			background-color: #FFECF3
+			color: #A03A63
+.aside
+	grid-template-columns: 1fr
+	grid-template-rows: auto auto
+	margin: 20px
 //* у .list свойств нет, а он стоит в отдельной строчке и после компиляции будет отдельно прописан
 //* пиши сразу .list-details
 .list
 	&-details
-		border-bottom: 2px dotted #bababa//* они и так во всю ширину потому что боксовый
+		border-bottom: 2px dotted #bababa
 		&-box
 			font-weight: 600
 			bottom: -3px
 			position: relative
 			display: flex
 			justify-content: space-between
-
 			&-value
-				
 				background-color: #fff
 				color: #ACACAC
 			&-number
 				color: #B43E6C
-				
 				background-color: #fff
 .text
 	width: 100%
@@ -391,11 +305,23 @@ aside
 	overflow-y: auto
 	padding: 60px 100px 60px 20px
 .message
+	position: relative
 	margin: 20px 10px
 	position: relative
 	padding: 15px 50px 15px 30px
-	border: 2px solid #BA3165
-	border-radius: 20px 20px 5px 20px
+	border-radius: 18px 18px 3px 18px
+	background: #fff
+	&:after
+		border-radius: 20px 20px 5px 20px
+		display: block
+		content: ''
+		top: -0.125em
+		left: -0.125em
+		z-index: -1
+		background-image: linear-gradient(90deg, #E7447F , #832E54)
+		position: absolute
+		height: calc( 100% + .25em)
+		width: calc(100% + .25em)
 	&-box
 		display: grid
 		grid-template-columns: 1fr 3fr
@@ -430,7 +356,6 @@ aside
 			&-text
 			.bottom	
 				font-weight: 500
-			// g пропущенна
 			.weidth
 				font-weight: 600
 			&-container
@@ -468,3 +393,5 @@ aside
 
 
 
+ 
+    
