@@ -315,26 +315,21 @@ aside
 	padding: 15px 50px 15px 30px
 	border-radius: 18px 18px 3px 18px
 	background: #fff
-	&:after
-		border-radius: 20px 20px 5px 20px
-		display: block
-		content: ''
-		top: -0.125em
-		left: -0.125em
-		z-index: -1
-		background-image: linear-gradient(90deg, #E7447F , #832E54)
-		position: absolute
-		height: calc( 100% + .25em)
-		width: calc(100% + .25em)
 	&-box
 		display: grid
 		grid-template-columns: 1fr 3fr
 		grid-gap: 10px
+		&-icon
+			align-self: center
+			padding: 10px
+			border-radius: 10px
+			font-size: 20px
+			background-color: #FFECF3
+			color: #A03A63
 		&-text
 			color: #BD577E
 			font-weight: 500
-		.withoutpic
-			grid-column: 1/3
+		
 		.grey
 			grid-column: 1/3
 			color: #989593
@@ -352,7 +347,7 @@ aside
 				border-radius: 10px
 				&:first-child
 					grid-column: 1/-1  
-
+	
 		&-butons
 			color: #B03564
 			font-weight: 600
@@ -363,24 +358,32 @@ aside
 			.weidth
 				font-weight: 600
 			&-container
-				display: flex
-				flex-direction: row
+				display: grid
+				grid-template-columns: auto auto
+				grid-column-gap: 5px
+				grid-row-gap: 10px
 				&-button
+					border: none
+					color: #767F8E
+					background-color: #EEF1F4
+					border-radius: 10px
+					font-size: 12px
+					font-weight: 600
+					padding: 12px
+					font-family: 'AvantGardeCTT'
+					outline: none
+					display: grid
 					margin: 10px 7px 10px 0px
 					width: 100%
 					max-width: 140px
-					padding: 2px
-					border: 0.07em solid #B03564	
-					border-radius: 7px
-					background: #fff
-					color: #B03564	
-					font-family: 'AvantGardeCTT'
-					outline: none
-					font-weight: 600
+					padding: 2px	
 					cursor: pointer
 					&:hover
-						background: #B03564
-						color: #fff
+						transition: .4s
+						background-color: #FFECF3
+						color: #A03A63
+	.withoutpic
+		grid-template-columns: auto auto
 
 	&-time
 		position: absolute
@@ -390,8 +393,7 @@ aside
 		color: #B6B6B6
 .client
 	border-radius: 20px 20px  20px 5px
-	border: 2px solid #989593
-	color: #989593
+	
 		
 
 
